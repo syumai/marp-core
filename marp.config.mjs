@@ -8,7 +8,4 @@ export default {
     './sandbox',
   ),
   html: true,
-  options: {
-    minifyCSS: false,
-  },
 }

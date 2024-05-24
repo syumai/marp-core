@@ -1,5 +1,5 @@
 {
-  "name": "@marp-team/marp-core",
+  "name": "@syumai/marp-core",
   "version": "3.9.0",
   "description": "The core of Marp tools",
   "license": "MIT",
@@ -11,6 +11,10 @@
     {
       "name": "Yuki Hattori",
       "url": "https://github.com/yhatt"
+    },
+    {
+      "name": "syumai",
+      "url": "https://github.com/syumai"
     }
   ],
   "keywords": [
@@ -90,7 +94,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-junit": "^16.0.0",
     "jest-plugin-context": "^2.9.0",
-    "markdown-it": "^13.0.2",
+    "markdown-it": "^14.1.0",
     "markdown-it-emoji": "^2.0.2",
     "mkdirp": "^3.0.1",
     "nodemon": "^3.0.1",
@@ -102,6 +106,7 @@
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "rollup": "^4.1.1",
+    "rollup-plugin-polyfill-node": "^0.13.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.69.3",
