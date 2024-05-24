@@ -1,7 +1,7 @@
 {
   "name": "@syumai/marp-core",
   "version": "3.9.0",
-  "description": "The core of Marp tools",
+  "description": "The core of Marp tools with patches for Cloudflare Workers",
   "license": "MIT",
   "author": {
     "name": "Marp team",
@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/marp-team/marp-core"
+    "url": "https://github.com/syumai/marp-core"
   },
   "main": "lib/marp.js",
   "types": "types/src/marp.d.ts",
