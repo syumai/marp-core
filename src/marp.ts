@@ -10,7 +10,6 @@ import * as emojiPlugin from './emoji/emoji'
 import { generateHighlightJSInstance } from './highlightjs'
 import * as htmlPlugin from './html/html'
 import * as mathPlugin from './math/math'
-import minifyPlugins from './prebundles/postcss-minify-plugins'
 import * as scriptPlugin from './script/script'
 import * as sizePlugin from './size/size'
 import * as slugPlugin from './slug/slug'
@@ -26,7 +25,6 @@ export interface MarpOptions extends Options {
       }
   markdown?: object
   math?: mathPlugin.MathOptions
-  minifyCSS?: boolean
   script?: boolean | scriptPlugin.ScriptOptions
   slug?: slugPlugin.SlugOptions
 }
@@ -52,7 +50,6 @@ export class Marp extends Marpit {
       inlineSVG: true,
       looseYAML: true,
       math: true,
-      minifyCSS: true,
       script: true,
       slug: true,
       ...opts,
@@ -116,7 +113,6 @@ export class Marp extends Marpit {
     const original = super.renderStyle(theme)
     const postprocessorPlugins: AcceptedPlugin[] = [
       customElements.css,
-      ...(this.options.minifyCSS ? minifyPlugins : []),
     ]
 
     const postprocessor = postcss(postprocessorPlugins)

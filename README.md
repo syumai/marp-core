@@ -225,7 +225,6 @@ const marp = new Marp({
     },
   },
   math: 'katex',
-  minifyCSS: true,
   script: {
     source: 'cdn',
     nonce: 'xxxxxxxxxxxxxxx',
@@ -303,10 +302,6 @@ You can choose the default library for math by passing **`"mathjax"`** (default)
 
 - **`katexFontPath`**: _`string` | `false`_
   - By default, Marp Core will use [online web-font resources through jsDelivr CDN](https://cdn.jsdelivr.net/npm/katex@latest/dist/fonts/). You have to set path to fonts directory if you want to use local resources. If you set `false`, we will not manipulate the path (Use KaTeX's original path: `fonts/KaTeX_***-***.woff2`).
-
-### `minifyCSS`: _`boolean`_
-
-Enable or disable minification for rendered CSS. `true` by default.
 
 ### `script`: _`boolean` | `object`_
 

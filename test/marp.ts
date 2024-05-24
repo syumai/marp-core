@@ -996,7 +996,7 @@ function matchwo(a,b)
           const decl = `${el} { color: #f00; }`
 
           // Custom theme
-          const instance = marp({ minifyCSS: false })
+          const instance = marp()
           instance.themeSet.add(`/* @theme a */ ${decl}`)
 
           expect(instance.render('<!--theme: a-->').css).toContain(
@@ -1012,7 +1012,7 @@ function matchwo(a,b)
 
       it('covers possible cases in complex selectors', () => {
         const transformedDecl = (decl: string) => {
-          const instance = marp({ minifyCSS: false, container: false })
+          const instance = marp({ container: false })
           const css = instance.render(`<style>${decl} {test: test}</style>`).css
 
           let ret: string | undefined
@@ -1065,41 +1065,6 @@ function matchwo(a,b)
         expect(transformedDecl('test::h1')).toBe('test::h1')
         expect(transformedDecl('test::part(h1)')).toBe('test::part(h1)')
       })
-    })
-  })
-
-  describe('minifyCSS option', () => {
-    it('applies minifier to rendered css', () => {
-      const enabled = marp({ minifyCSS: true })
-      const disabled = marp({ minifyCSS: false })
-
-      expect(enabled.render('').css.length).toBeLessThan(
-        disabled.render('').css.length,
-      )
-
-      // Custom theme
-      const customTheme =
-        '/* @theme a */  @media screen \t and (  min-width : 768px )  { div { color: #f00; }  }'
-
-      enabled.themeSet.add(customTheme)
-      disabled.themeSet.add(customTheme)
-
-      const enabledCss = enabled.render('<!-- theme: a -->').css
-      const disabledCss = disabled.render('<!-- theme: a -->').css
-
-      expect(disabledCss).toContain(
-        '@media screen \t and (  min-width : 768px )',
-      )
-      expect(disabledCss).toContain('div { color: #f00; }')
-      expect(enabledCss).toContain('@media screen and (min-width:768px)')
-      expect(enabledCss).toContain('div{color:#f00}')
-    })
-
-    it('applies minifier by default', () => {
-      const { css: minifiedCSS } = marp({ minifyCSS: true }).render('')
-      const { css: defaultCSS } = marp().render('')
-
-      expect(minifiedCSS).toBe(defaultCSS)
     })
   })
 
