@@ -10,6 +10,7 @@ import typescript from '@rollup/plugin-typescript'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 import postcssUrl from 'postcss-url'
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 import postcss from 'rollup-plugin-postcss'
 import { string } from 'rollup-plugin-string'
 import postcssOptimizeDefaultTheme from './scripts/postcss-optimize-default-theme.mjs'
@@ -29,6 +30,9 @@ const plugins = ({ browser = false } = {}) => [
     ],
   }),
   string({ include: ['lib/*.js'] }),
+  nodePolyfills({
+    include: null
+  }),
   nodeResolve({ browser }),
   commonjs(),
   typescript(),

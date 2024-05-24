@@ -102,6 +102,7 @@
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "rollup": "^4.1.1",
+    "rollup-plugin-polyfill-node": "^0.13.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-string": "^3.0.0",
     "sass": "^1.69.3",
