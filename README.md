@@ -1,11 +1,11 @@
-# @marp-team/marp-core
+# @syumai/marp-core
 
 [![CircleCI](https://img.shields.io/circleci/project/github/marp-team/marp-core/main.svg?style=flat-square&logo=circleci)](https://circleci.com/gh/marp-team/marp-core/)
 [![Codecov](https://img.shields.io/codecov/c/github/marp-team/marp-core/main.svg?style=flat-square&logo=codecov)](https://codecov.io/gh/marp-team/marp-core)
 [![npm](https://img.shields.io/npm/v/@marp-team/marp-core.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@marp-team/marp-core)
 [![LICENSE](https://img.shields.io/github/license/marp-team/marp-core.svg?style=flat-square)](./LICENSE)
 
-**The core of [Marp](https://github.com/marp-team/marp) converter.**
+**The patched version of core of [Marp](https://github.com/marp-team/marp) converter.**
 
 In order to use on Marp tools, we have extended from the slide deck framework **[Marpit](https://github.com/marp-team/marpit)**. You can use the practical Markdown syntax, advanced features, and official themes.
 
@@ -13,12 +13,12 @@ In order to use on Marp tools, we have extended from the slide deck framework **
 
 ```bash
 # npm
-npm install --save @marp-team/marp-core
+npm install --save @syumai/marp-core
 ```
 
 ```bash
 # yarn
-yarn add @marp-team/marp-core
+yarn add @syumai/marp-core
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ yarn add @marp-team/marp-core
 We provide `Marp` class, that is inherited from [Marpit](https://github.com/marp-team/marpit).
 
 ```javascript
-import { Marp } from '@marp-team/marp-core'
+import { Marp } from '@syumai/marp-core'
 
 // Convert Markdown slide deck into HTML and CSS
 const marp = new Marp()
@@ -345,7 +345,7 @@ Are you interested in contributing? Please see [CONTRIBUTING.md](.github/CONTRIB
 
 ## Author
 
-Managed by [@marp-team](https://github.com/marp-team).
+Originally, managed by [@marp-team](https://github.com/marp-team).
 
 - <img src="https://github.com/yhatt.png" width="16" height="16"/> Yuki Hattori ([@yhatt](https://github.com/yhatt))
 
